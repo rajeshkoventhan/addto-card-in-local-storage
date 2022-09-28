@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/df91c89325.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<section class="container">
+   <div class="icon">
+    <i class="fa fa-shopping-cart"></i>   
+    <p class="span"></p> 
+  </div>
+<div class="box">
+<img src="https://assets.macysassets.com/dyn_img/creativepages/seo-msg-bb-01.jpg" width="250px" height="250px">
+<button   class="btn" onclick="cot()">add-card</button>
+<h3>130$</h3>
+</div>
+
+<div class="box1">
+    <img src="https://m.media-amazon.com/images/I/71T8HkuK+8L._UY500_.jpg" width="250px" height="250px">
+    <button  class="btn" onclick="cot()">add-card</button>
+    <h3>130$</h3>
+</div>
+
+<div class="box2">
+    <img src="https://m.media-amazon.com/images/I/41p38C+evrL._UY395_.jpg" width="250px" height="250px">
+    <button class="btn"  onclick="cot()">add-card</button>
+    <h3>130$</h3>
+</div>
+
+<div class="box3">
+    <img src="https://5.imimg.com/data5/GF/XR/MY-1600270/school-500x500.jpg" width="250px" height="250px">
+       <button  class="btn" onclick="cot()">add-card</button>
+       <h3>130$</h3>
+ </div>
+ 
+</section>
+
+<section>
+<div class="select">
+ 
+
+</div>
+</section>
+
+
+
+<script>   
+ var btn = document.querySelectorAll(".btn");
+ var span=document.querySelector(".span");
+
+
+
+ 
+
+
+for(var i = 0; i < btn.length; i++){
+    btn[i].addEventListener("click", () => {
+
+     count();
+
+
+
+
+    function count(){
+    var  procount = localStorage.getItem("count");
+    procount = parseInt(procount);
+
+    if(procount){
+    localStorage.setItem("count",procount + 1 );
+    span.textContent = procount + 1;
+    }else{
+        localStorage.setItem("count",  1);
+        span.textContent = procount = 1;
+    }
+}
+
+})
+
+}
+
+function displaycard(){
+    var  procount = localStorage.getItem("count");
+    if(procount){
+         span.textContent=procount;
+    }else{
+
+    }
+}
+ 
+displaycard();
+
+
+
+
+ 
+ var count=0;
+
+ function cot(){
+    count+=1;
+    document.querySelector(".span").innerHTML=count;
+
+
+
+}
+
+     
+var parent = select.parentNode;
+var clone = parent.cloneNode(true);
+select.appendChild(clone);
+
+
+ if(clone){
+  span.addEventListener("click",()=>{
+
+}) 
+}
+
+var img = select.parentNode.querySelector("img");
+var span = select.parentNode.querySelector("span");
+var s_img= img.cloneNode(false);
+span.appendChild(s_img);
+span.classList.add("active");
+setTimeout(()=>{
+span.removeChild(s_img);
+span.classList.remove("active");   
+},500);
+
+
+
+
+
+
+</script>
+</body>
+</html>
